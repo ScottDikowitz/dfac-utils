@@ -3,7 +3,8 @@ DFAC Utils
 Crossword Puzzle Fetcher and Converter for DownForACross
 
 addTodaysNYT.py fetches crossword puzzle data from xwordinfo.com, processes it into a format compatible with DownForACross, and posts it to your locally running instance of DownForACross.
-Features
+
+Features:
 
     Fetch Puzzle Data: Retrieves crossword puzzle data from xwordinfo.com based on a specified date.
 
