@@ -3,7 +3,7 @@ import { JsonResponse, DFACpuzzle } from './interfaces';
 const BASE_URL = 'http://localhost:3021';
 
 async function getData(): Promise<JsonResponse> {
-  let response = await fetch('https://www.xwordinfo.com/JSON/Data.ashx?date=2/12/2025', {
+  let response = await fetch('https://www.xwordinfo.com/JSON/Data.ashx?date=3/1/2025', {
     headers: {
       Referer: 'https://www.xwordinfo.com'
     }
@@ -22,7 +22,11 @@ async function fetchPid(): Promise<string> {
 async function postPuzzle(puzzle: any, pid: string, isPublic: boolean): Promise<void> {
   await fetch(`${BASE_URL}/api/puzzle`, {
     method: "POST",
-    body: JSON.stringify({ puzzle: puzzle, pid, isPublic })
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ puzzle, pid, isPublic })
   });
 }
 
